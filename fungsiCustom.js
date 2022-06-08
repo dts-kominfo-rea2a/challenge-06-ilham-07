@@ -29,12 +29,12 @@ const bacaData = (fnCallback) => {
         if (err) {
           return fnCallback(err, null);
         } else {
-          arrHasil.push(JSON.parse(data).message.split(" ")[1]);
+          arrHasil.push(JSON.parse(data)[0].message.split(" ")[1]);
           fs.readFile(file3, "utf-8", (err, data) => {
             if (err) {
               return fnCallback(err, null);
             } else {
-              arrHasil.push(JSON.parse(data).message.split(" ")[1]);
+              arrHasil.push(JSON.parse(data)[0].data.message.split(" ")[1]);
               fnCallback(null, arrHasil);
             }
           });
